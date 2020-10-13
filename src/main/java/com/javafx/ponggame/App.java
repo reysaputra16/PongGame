@@ -2,6 +2,7 @@ package com.javafx.ponggame;
 
 import javafx.application.Application;
 import javafx.scene.Scene;
+import javafx.scene.input.KeyCode;
 import javafx.scene.layout.Pane;
 import javafx.scene.shape.Rectangle;
 import javafx.stage.Stage;
@@ -18,6 +19,14 @@ public class App extends Application {
         Scene scene = new Scene(root);
         root.getChildren().add(leftPlayer);
         root.getChildren().add(rightPlayer);
+
+        scene.setOnKeyPressed(e -> {
+            if(e.getCode() == KeyCode.UP) {
+                rightPlayer.setY(rightPlayer.getY() - 5);
+            } else if(e.getCode() == KeyCode.DOWN) {
+                rightPlayer.setY(rightPlayer.getY() + 5);
+            }
+        });
 
         primaryStage.setScene(scene);
         primaryStage.setTitle("Pong Game");

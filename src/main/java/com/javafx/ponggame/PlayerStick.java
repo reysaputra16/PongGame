@@ -5,7 +5,7 @@ import javafx.scene.shape.Rectangle;
 
 public class PlayerStick extends Rectangle {
 
-    private int speed = 0;
+    private int speed = 5;
 
     public PlayerStick(double x, double y) {
         super(20, 100, Color.BLACK);
